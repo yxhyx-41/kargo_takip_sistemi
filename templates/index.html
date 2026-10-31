@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kargo Takip Sistemi</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kargo Takip Sistemi</h1>
+        <p>Kargonuzun durumunu hızlı ve kolay bir şekilde takip edin.</p>
+    </header>
+    <section class="create-cargo">
+    <h2>Yeni Kargo Oluştur</h2>
+
+    <form id="cargoForm">
+        <input type="text" id="sender" placeholder="Gönderici adı" required>
+
+        <input type="text" id="receiver" placeholder="Alıcı adı" required>
+
+        <input type="text" id="location" placeholder="Gönderici şubesi" required>
+
+        <button type="submit">Kargo Oluştur</button>
+    </form>
+
+    <div id="createMessage"></div>
+</section>
+<section class="cargo-list">
+    <h2>Kargo Listesi</h2>
+
+    <button onclick="showCargos()">Kargoları Listele</button>
+
+    <div id="cargoTable"></div>
+</section>
+    <main>
+
+        <section class="tracking-box">
+            <h2>Kargonuzu Takip Edin</h2>
+
+            <div class="tracking-form">
+                <input
+                    type="text"
+                    id="trackingNumber"
+                    placeholder="Takip numaranızı giriniz"
+                >
+
+                <button onclick="trackCargo()">Sorgula</button>
+            </div>
+
+            <div id="result"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Kargo Takip Sistemi</p>
+    </footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
